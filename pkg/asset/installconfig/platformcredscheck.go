@@ -1,11 +1,10 @@
 package installconfig
-
+// removed import: awsconfig "github.com/openshift/installer/pkg/asset/installconfig/aws"
 import (
 	"fmt"
 
 	"github.com/gophercloud/utils/openstack/clientconfig"
 	"github.com/openshift/installer/pkg/asset"
-	awsconfig "github.com/openshift/installer/pkg/asset/installconfig/aws"
 	azureconfig "github.com/openshift/installer/pkg/asset/installconfig/azure"
 	"github.com/openshift/installer/pkg/types/aws"
 	"github.com/openshift/installer/pkg/types/azure"
@@ -15,6 +14,8 @@ import (
 	"github.com/openshift/installer/pkg/types/vsphere"
 	"github.com/pkg/errors"
 )
+
+
 
 // PlatformCredsCheck is an asset that checks the platform credentials, asks for them or errors out if invalid
 // the cluster.
