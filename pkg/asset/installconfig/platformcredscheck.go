@@ -39,11 +39,12 @@ func (a *PlatformCredsCheck) Generate(dependencies asset.Parents) error {
 	platform := ic.Config.Platform.Name()
 	switch platform {
 	case aws.Name:
-		ssn, err := awsconfig.GetSession()
-		if err != nil {
-			return errors.Wrap(err, "creating AWS session")
-		}
 		// Turn off check
+		// ssn, err := awsconfig.GetSession()
+		// if err != nil {
+		// 	return errors.Wrap(err, "creating AWS session")
+		//}
+
 		//err = awsconfig.ValidateCreds(ssn)
 		//if err != nil {
 		//	return errors.Wrap(err, "validate AWS credentials")
