@@ -43,10 +43,11 @@ func (a *PlatformCredsCheck) Generate(dependencies asset.Parents) error {
 		if err != nil {
 			return errors.Wrap(err, "creating AWS session")
 		}
-		err = awsconfig.ValidateCreds(ssn)
-		if err != nil {
-			return errors.Wrap(err, "validate AWS credentials")
-		}
+		// Turn off check
+		//err = awsconfig.ValidateCreds(ssn)
+		//if err != nil {
+		//	return errors.Wrap(err, "validate AWS credentials")
+		//}
 	case openstack.Name:
 		opts := new(clientconfig.ClientOpts)
 		opts.Cloud = ic.Config.Platform.OpenStack.Cloud
