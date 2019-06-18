@@ -1,15 +1,14 @@
 package installconfig
 //	awsconfig "github.com/openshift/installer/pkg/asset/installconfig/aws"
+// 	"github.com/pkg/errors"
 import (
 	"fmt"
-
 	"github.com/gophercloud/utils/openstack/clientconfig"
 	"github.com/openshift/installer/pkg/asset"
 	"github.com/openshift/installer/pkg/types/aws"
 	"github.com/openshift/installer/pkg/types/libvirt"
 	"github.com/openshift/installer/pkg/types/none"
 	"github.com/openshift/installer/pkg/types/openstack"
-	"github.com/pkg/errors"
 )
 
 // PlatformCredsCheck is an asset that checks the platform credentials, asks for them or errors out if invalid
