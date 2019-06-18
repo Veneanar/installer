@@ -1,11 +1,10 @@
 package installconfig
-
+//	awsconfig "github.com/openshift/installer/pkg/asset/installconfig/aws"
 import (
 	"fmt"
 
 	"github.com/gophercloud/utils/openstack/clientconfig"
 	"github.com/openshift/installer/pkg/asset"
-	awsconfig "github.com/openshift/installer/pkg/asset/installconfig/aws"
 	"github.com/openshift/installer/pkg/types/aws"
 	"github.com/openshift/installer/pkg/types/libvirt"
 	"github.com/openshift/installer/pkg/types/none"
@@ -36,6 +35,7 @@ func (a *PlatformCredsCheck) Generate(dependencies asset.Parents) error {
 	platform := ic.Config.Platform.Name()
 	switch platform {
 	case aws.Name:
+		/*
 		ssn, err := awsconfig.GetSession()
 		if err != nil {
 			return errors.Wrap(err, "creating AWS session")
@@ -44,6 +44,7 @@ func (a *PlatformCredsCheck) Generate(dependencies asset.Parents) error {
 		if err != nil {
 			return errors.Wrap(err, "validate AWS credentials")
 		}
+		*/
 	case libvirt.Name:
 	case none.Name:
 	case openstack.Name:
