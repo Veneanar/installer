@@ -6,6 +6,7 @@ import (
 	"github.com/gophercloud/utils/openstack/clientconfig"
 	"github.com/openshift/installer/pkg/asset"
 	azureconfig "github.com/openshift/installer/pkg/asset/installconfig/azure"
+	"github.com/openshift/installer/pkg/types/aws"
 	"github.com/openshift/installer/pkg/types/azure"
 	"github.com/openshift/installer/pkg/types/libvirt"
 	"github.com/openshift/installer/pkg/types/none"
@@ -36,6 +37,7 @@ func (a *PlatformCredsCheck) Generate(dependencies asset.Parents) error {
 	var err error
 	platform := ic.Config.Platform.Name()
 	switch platform {
+	case aws.Name:
 	case openstack.Name:
 		opts := new(clientconfig.ClientOpts)
 		opts.Cloud = ic.Config.Platform.OpenStack.Cloud
